@@ -137,7 +137,7 @@ class _CameraPageState extends State<CameraPage> {
 
       Offset point = Offset(xp, yp);
 
-   
+      print("Focus point: $point");
 
       // Manually focus
       await _cameraController.setFocusPoint(point);
@@ -158,14 +158,6 @@ class _CameraPageState extends State<CameraPage> {
 
   @override
   Widget build(BuildContext context) {
-
-    final size = MediaQuery.of(context).size;
-    final camera = _cameraController.value;
-    
-    // Calculate scale depending on screen and camera ratios
-    var scale = size.aspectRatio * camera.aspectRatio;
-    if (scale < 1) scale = 1 / scale;
-
     return Scaffold(
       body: Stack(
         children: [
